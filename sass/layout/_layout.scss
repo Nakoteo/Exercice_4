@@ -160,7 +160,7 @@ li {
 }
 
 .menu {
-  background-color: #E84545;
+  background-color: #1D2A47;
   text-align: center;
   /*Pour cet exemple, on fixe la largeur du menu à 100% ou 100vw*/
   width: 100vw;
@@ -228,6 +228,8 @@ li {
     /*Affichage du menu en rangée*/
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .menu a {
     border: none;
