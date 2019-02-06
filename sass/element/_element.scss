@@ -1,3 +1,5 @@
+$bleu: #1D2A47;
+
 .box {
     background-color: #444;
     color: #fff;
@@ -27,10 +29,10 @@
     font-size: 18px;
   }
   .boutonBurger {
-    background: linear-gradient(to bottom, #1D2A47 0%, #1D2A47 20%, transparent 20%, transparent 40%, #1D2A47 40%, #1D2A47 60%, transparent 60%, transparent 80%, #1D2A47 80%, #1D2A47 100%);
+    background: linear-gradient(to bottom, $bleu 0%, $bleu 20%, transparent 20%, transparent 40%, $bleu 40%, $bleu 60%, transparent 60%, transparent 80%, $bleu 80%, $bleu 100%);
   }
   .menu {
-    background-color: #1D2A47;
+    background-color: $bleu;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
   }
