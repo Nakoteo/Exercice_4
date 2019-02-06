@@ -94,6 +94,7 @@ body {
     -ms-grid-columns: 100px auto 100px;
         grid-template-columns: 100px auto 100px;
         grid-template-areas: "header  header  header" "sidebar content sidebar2" "footer  footer  footer";
+    max-width: 600px;
   }
 }
 
@@ -124,6 +125,79 @@ body {
   color: #444;
   font-family: "Gill Sans", sans-serif;
   font-size: 18px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100vw;
+  min-height: 100vh;
+  /*Conteneur flex en colonne*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.global {
+  max-width: 100vw;
+  /*Propriété comme item flex*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  /*Conteneur flex en rangée*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*Poussée vers la gauche pour ne pas voir le menu*/
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  /*Effet de transition sur la transformation*/
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  /*	overflow-x: hidden; */
+}
+
+.contenu {
+  /*Sa largeur est fixée à 100%*/
+  width: 100vw;
+  /*Propriété comme item flex - ne peut rétrécir*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+  /*Conteneur flex en colonne pour ses enfants*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+section {
+  background-color: #ffc9b7;
+  padding: 0 0.5rem;
+  /*Propriété comme item flex - peut s'étirer en hauteur*/
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 100%;
+          flex: 1 0 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 1%;
+  background-color: #E84545;
+}
+
+li {
+  margin: 0.5rem 2rem;
 }
 
 .boutonBurger {
@@ -177,6 +251,11 @@ body {
   border-top: 1px solid white;
 }
 
+/* le menu... apparaît ou disparaît selon l'état checked de la case à cocher #chkBoutonBurger
+  on fait aussi tourner le bouton burger...
+
+  Et... pour l'aspect esthétique de la chose... la case à cocher (checkbox) n'est pas affichée...
+*/
 #chkBoutonBurger:checked ~ .global {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
@@ -191,6 +270,7 @@ body {
   display: none;
 }
 
+/*Pour les tailles plus grandes le menu apparaît de hauteur normale et le bouton burger disparaît*/
 @media screen and (min-width: 768px) {
   html {
     font-size: 1em;
