@@ -93,8 +93,8 @@ body {
 @media only screen and (min-width: 600px) {
   .wrapper {
     grid-gap: 30px;
-    -ms-grid-columns: 100px auto 100px;
-        grid-template-columns: 100px auto 100px;
+    -ms-grid-columns: 20% auto 20%;
+        grid-template-columns: 20% auto 20%;
         grid-template-areas: "header  header  header" "sidebar content sidebar2" "footer  footer  footer";
     min-width: 600px;
   }
@@ -218,7 +218,7 @@ li {
 }
 
 .menu {
-  background-color: #E84545;
+  background-color: #1D2A47;
   text-align: center;
   /*Pour cet exemple, on fixe la largeur du menu à 100% ou 100vw*/
   width: 100vw;
@@ -303,6 +303,8 @@ li {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   .menu a {
     border: none;
@@ -314,6 +316,9 @@ li {
   }
   .menu a:first-child {
     border-top: none;
+  }
+  .contenu {
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
